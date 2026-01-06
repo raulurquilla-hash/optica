@@ -1,0 +1,68 @@
+Table pacientes {
+  id int [pk, increment]
+  fecha_consulta date
+  nombre1 varchar(55)
+  nombre2 varchar(55)
+  apellidoP varchar(55)
+  apellidoM varchar(55)
+  DUI varchar(10) [unique]
+  fecha_nacimiento date
+  genero varchar(10)
+  telefono varchar(15)
+  email varchar(100)
+  direccion varchar(200)
+  fecha_registro timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table examenes {
+  id int [pk, increment]
+  paciente_id int [ref: > pacientes.id]
+  rx_od varchar(10)
+  rx_oi varchar(10)
+  esfera_od varchar(10)
+  esfera_oi varchar(10)
+  cilindro_od varchar(10)
+  cilindro_oi varchar(10)
+  eje_od varchar(10)
+  eje_oi varchar(10)
+  base_od varchar(10)
+  base_oi varchar(10)
+  add  varchar(10)
+  lensometria varchar (100)
+  agudeza_sl varchar(10)
+  agudeza_cc varchar(10)
+  rx text
+  fecha_examen date
+  resultados text
+  observaciones text
+  fecha_registro timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table diagnosticos {
+  id int [pk, increment]
+    examen_id int [ref: > examenes.id]
+    descripcion text
+    fecha_diagnostico date 
+    fecha_registro timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table tratamientos {
+  id int [pk, increment]
+    diagnostico_id int [ref: > diagnosticos.id]
+    tratamiento text
+    fecha_tratamiento date 
+    fecha_registro timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table optometras {
+  id int [pk, increment]
+  nombre1 varchar(55)
+  nombre2 varchar(55)
+  apellidoP varchar(55)
+  apellidoM varchar(55)
+  licencia varchar(50) [unique]
+  telefono varchar(15)
+  fecha_registro timestamp [default: `CURRENT_TIMESTAMP`]
+  
+}
+    
