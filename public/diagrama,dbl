@@ -1,8 +1,0 @@
-Table optometras (
-    id INT PRIMARY KEY,
-    nombre1 VARCHAR(55) NOT NULL,
-    nombre2 VARCHAR(55),
-    apellidoP VARCHAR(55) NOT NULL,
-    apellidoM VARCHAR(55),      
-    telefono VARCHAR(15),
-    );
