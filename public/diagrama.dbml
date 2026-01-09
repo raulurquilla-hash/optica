@@ -11,6 +11,7 @@ Table pacientes {
   telefono varchar(15)
   email varchar(100)
   direccion varchar(200)
+  expediente_medico varchar(50) [unique]
   fecha_registro timestamp [default: `CURRENT_TIMESTAMP`]
 }
 
@@ -63,6 +64,6 @@ Table optometras {
   licencia varchar(50) [unique]
   telefono varchar(15)
   fecha_registro timestamp [default: `CURRENT_TIMESTAMP`]
-  
+
 }
     
