@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('nombre2', 55);
             $table->string('apellidoP', 55);
             $table->string('apellidoM', 55);
-            $table->string('DUI', 10)->unique();
+            $table->string('DUI', 11)->unique();
             $table->date('fecha_nacimiento');
-            $table->string('genero', 10);
+            $table->enum('genero', ['Masculino', 'Femenino']);
             $table->string('telefono', 15);
             $table->string('email', 100);
             $table->text('direccion');
